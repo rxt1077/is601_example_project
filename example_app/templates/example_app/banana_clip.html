@@ -1,0 +1,12 @@
+{% extends 'example_app/base.html' %}
+
+{% block title %}Extends Example{% endblock %}
+
+{% block content %}
+<p>This page has extended example_app/base.html!</p>
+<p>Now I'm going to do some stuff with baked goods.</p>
+{% for banana in clip %}
+    <div>{{ banana.name }}</div>
+{% endfor %}
+<p>{{ message }}</p>
+{% endblock %}

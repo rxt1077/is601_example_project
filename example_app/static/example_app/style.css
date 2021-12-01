@@ -1,0 +1,6 @@
+/* style.css - used for making my brownie picture smaller */
+img.smaller {
+    width: 200px;
+    border: solid;
+    border-width: thin;
+}

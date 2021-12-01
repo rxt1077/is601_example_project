@@ -1,0 +1,20 @@
+{% extends 'pos/base.html' %}
+{% load static %}
+
+{% block title %}Showing order #{{ order.id }}{% endblock %}
+
+{% block content %}
+
+<div class="row">
+    Order: #{{ order.id }}
+</div>
+{% for name in names %}
+<div class="row">
+    {{ name }}
+</div>
+{% endfor %}
+<div class="row">
+    Total cost: ${{ order.total_cost }}
+</div>
+
+{% endblock %}

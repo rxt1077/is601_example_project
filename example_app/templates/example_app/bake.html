@@ -1,0 +1,18 @@
+{% extends 'example_app/base.html' %}
+{% load static %} 
+
+{% block title %}Bake Item{% endblock %}
+
+{% block content %}
+<img src="{% static 'example_app/brownies.jpg' %}" alt="brownies">
+<p>Please use the following form to submit items that have been baked.</p>
+<form action="{% url 'bake' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+<script> 
+    flatpickr("#id_baked_on", {enableTime: true, dateFormat: "Y-m-d H:i"}); 
+</script>
+
+{% endblock %}

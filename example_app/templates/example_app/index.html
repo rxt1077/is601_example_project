@@ -1,0 +1,33 @@
+{% extends 'example_app/base.html' %}
+{% load static %}
+
+{% block title %}Welcome!{% endblock %}
+
+{% block content %}
+
+<div class="row">
+<form action="{% url 'index' %}">
+    <input type="text" name="q">
+    <input type="submit" value="Search">
+</form>
+</div>
+
+<div class="row">
+    <div class="col-4"></div>
+    <div class="col-4"><img src="{% static 'example_app/brownies.jpg' %}" alt="brownies" class="img-thumbnail"></div>
+    <div class="col-4"></div>
+</div>
+<div class="row">
+    <div class="col text-center">
+        <h2>Let's see what's for dessert!</h2>
+    </div>
+</div>
+{% for baked_good in baked_goods %}
+<div class="row">
+    <div class="col-2"><h4>${{ baked_good.price }}</h4></div>
+    <div class="col-4"><h4>{{ baked_good.name }}</h4></div>
+    <div class="col-6"><h4>{{ baked_good.desc }}</h4></div>
+</div>
+{% endfor %}
+
+{% endblock %}

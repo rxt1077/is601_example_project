@@ -1,0 +1,12 @@
+{% extends 'example_app/base.html' %}
+
+{% block title %}Add Ingredient{% endblock %}
+
+{% block content %}
+<p>Please use the following form to add new ingredients to our database.</p>
+<form action="{% url 'add_ingredient' %}" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <input type="submit" value="Submit">
+</form>
+{% endblock %}
